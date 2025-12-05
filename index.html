@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -280,8 +279,10 @@
     /* HERO IMAGE */
     .hero-photo-wrap {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 0.75rem;
     }
 
     .hero-photo-inner {
@@ -323,9 +324,8 @@
     }
 
     .hero-badge {
-      position: absolute;
-      bottom: 9%;
-      right: 5%;
+      margin-top: 0.75rem;
+      position: static;
       padding: 0.45rem 0.7rem;
       border-radius: 999px;
       font-size: 0.7rem;
@@ -857,6 +857,15 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Make hero fill screen height on larger displays */
+    @media (min-width: 900px) {
+      #hero {
+        min-height: calc(100vh - 80px); /* viewport height minus navbar */
+        display: flex;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -927,12 +936,12 @@
           <div class="hero-photo-wrap">
             <div class="hero-photo-inner">
               <div class="hero-photo-ring"></div>
-              <!-- Replace src with the path to your image -->
+              <!-- Your image -->
               <img src="167501404.png" alt="Profile photo" class="hero-photo" />
-              <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                Data • Backend • Ops
-              </div>
+            </div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Data • Backend • Ops
             </div>
           </div>
         </div>
@@ -1385,4 +1394,3 @@
   </script>
 </body>
 </html>
-```
