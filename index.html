@@ -1,0 +1,1388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ujwal Pathak | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Ujwal Pathak - Data Science, Backend Development, and Operations Management professional based in Bangalore, India." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #020617;
+      --surface: #020617;
+      --surface-alt: #020617;
+      --accent: #facc15;
+      --accent-soft: rgba(250, 204, 21, 0.18);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --accent-text: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8), transparent);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.7);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top left, #facc15 0, #0f172a 45%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #020617;
+      box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.7), 0 10px 25px rgba(15, 23, 42, 0.9);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.2rem;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #facc15, #fde047);
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #e5e7eb;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    #hero {
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #a5b4fc;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      margin-bottom: 0.55rem;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #facc15, #fde047);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.15), transparent 55%);
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #facc15 0, #eab308 40%, #ca8a04 100%);
+      color: #111827;
+      box-shadow: 0 18px 45px rgba(250, 204, 21, 0.38);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(250, 204, 21, 0.45);
+    }
+
+    .btn-outline {
+      background: rgba(15, 23, 42, 0.7);
+      border-color: rgba(148, 163, 184, 0.55);
+      color: #e5e7eb;
+    }
+
+    .btn-outline:hover {
+      border-color: #facc15;
+      background: radial-gradient(circle at top, rgba(250, 204, 21, 0.18), rgba(15, 23, 42, 0.96));
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.75);
+      transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+    }
+
+    .hero-links a:hover {
+      border-style: solid;
+      border-color: #facc15;
+      color: #e5e7eb;
+      background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.18), rgba(15, 23, 42, 0.98));
+    }
+
+    /* HERO IMAGE */
+    .hero-photo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-photo-inner {
+      position: relative;
+      width: min(260px, 80vw);
+      aspect-ratio: 1 / 1;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(248, 250, 252, 0.35), transparent 50%),
+        radial-gradient(circle at 80% 100%, rgba(250, 204, 21, 0.5), transparent 55%),
+        #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 0 1px rgba(148, 163, 184, 0.5),
+        0 24px 80px rgba(15, 23, 42, 0.95);
+      overflow: hidden;
+    }
+
+    .hero-photo-ring {
+      position: absolute;
+      inset: 7%;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 20% 0%, #fefce8 0, #facc15 40%, #ca8a04 100%);
+      filter: blur(3px);
+      opacity: 0.4;
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 2;
+      width: 82%;
+      height: 82%;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 2px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 9%;
+      right: 5%;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(15, 23, 42, 0.96);
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    .section-title span {
+      color: #facc15;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1.1fr;
+      gap: 2.2rem;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .about-text p + p {
+      margin-top: 0.9rem;
+    }
+
+    .about-highlight {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(250, 204, 21, 0.14);
+      color: #fde68a;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.7rem;
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1.2rem;
+      font-size: 0.86rem;
+    }
+
+    .pill {
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.2), transparent 60%);
+      color: #e5e7eb;
+    }
+
+    .about-panel {
+      padding: 1.2rem 1.2rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(30, 64, 175, 0.9);
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.25), rgba(15, 23, 42, 0.98));
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 1);
+      font-size: 0.86rem;
+    }
+
+    .about-panel h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #e5e7eb;
+    }
+
+    .about-panel span {
+      font-size: 0.78rem;
+      color: #bfdbfe;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .about-panel ul {
+      margin-top: 0.8rem;
+      padding-left: 1.1rem;
+      color: #d1d5db;
+    }
+
+    .about-panel li + li {
+      margin-top: 0.35rem;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      border-radius: 1rem;
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.98));
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      padding: 1.1rem 1.1rem 1rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+    }
+
+    .card-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+    }
+
+    .tag {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+
+    /* EXPERIENCE */
+    .timeline {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+      gap: 2.2rem;
+      align-items: flex-start;
+    }
+
+    .timeline-list {
+      border-left: 1px solid rgba(55, 65, 81, 0.9);
+      padding-left: 1.4rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.8rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -1.65rem;
+      top: 0.2rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #facc15 0, #eab308 55%, #a16207 100%);
+      box-shadow:
+        0 0 0 4px rgba(250, 204, 21, 0.12),
+        0 0 20px rgba(250, 204, 21, 0.7);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .timeline-company {
+      font-size: 0.88rem;
+      color: #9ca3af;
+    }
+
+    .timeline-meta {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-tags span {
+      font-size: 0.75rem;
+      padding: 0.16rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
+    }
+
+    .timeline-body {
+      font-size: 0.86rem;
+      color: #d1d5db;
+    }
+
+    .timeline-body ul {
+      padding-left: 1.1rem;
+    }
+
+    .timeline-body li + li {
+      margin-top: 0.28rem;
+    }
+
+    .timeline-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .timeline-aside {
+      padding: 1.2rem 1.3rem 1.1rem;
+      border-radius: 1rem;
+      background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.22), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(234, 179, 8, 0.9);
+      box-shadow: 0 26px 65px rgba(15, 23, 42, 1);
+      font-size: 0.86rem;
+    }
+
+    .timeline-aside h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-aside p {
+      color: #111827;
+    }
+
+    .timeline-aside ul {
+      margin-top: 0.7rem;
+      padding-left: 1.1rem;
+      color: #111827;
+    }
+
+    .timeline-aside li + li {
+      margin-top: 0.32rem;
+    }
+
+    /* EDUCATION & CERTIFICATIONS */
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .edu-item {
+      margin-bottom: 1.3rem;
+      font-size: 0.9rem;
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-title {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .edu-meta {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin: 0.1rem 0 0.25rem;
+    }
+
+    .edu-location {
+      font-size: 0.82rem;
+      color: #6b7280;
+    }
+
+    .cert-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.86rem;
+    }
+
+    .cert-list li {
+      padding-left: 1rem;
+      position: relative;
+      color: #d1d5db;
+    }
+
+    .cert-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #facc15;
+    }
+
+    /* CONTACT */
+    #contact .card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li span {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+      margin-bottom: 0.12rem;
+    }
+
+    .contact-list a {
+      color: #e5e7eb;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.4);
+      padding-bottom: 0.03rem;
+    }
+
+    .contact-cta {
+      font-size: 0.86rem;
+      color: #9ca3af;
+      margin-top: 0.6rem;
+    }
+
+    .contact-cta strong {
+      color: #e5e7eb;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .field label {
+      color: #9ca3af;
+    }
+
+    .field input,
+    .field textarea {
+      font-family: inherit;
+      font-size: 0.86rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      resize: vertical;
+      min-height: 2.4rem;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: #facc15;
+      box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.6);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1.6rem 0 2.4rem;
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    footer span {
+      white-space: nowrap;
+    }
+
+    footer a {
+      color: #9ca3af;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.6);
+      padding-bottom: 0.05rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.9fr;
+        gap: 1.8rem;
+      }
+      #hero {
+        padding-top: 3.4rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 1.5rem;
+      }
+      #contact .card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        position: static;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        row-gap: 0.4rem;
+      }
+      #hero {
+        padding-top: 2.6rem;
+      }
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+      }
+      .hero-photo-wrap {
+        order: -1;
+        margin-bottom: 1.6rem;
+      }
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-meta {
+        gap: 0.8rem;
+      }
+      .about-facts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="nav-logo">UP</div>
+          <div class="nav-title">Ujwal&nbsp;Pathak</div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-kicker">Data Science • Backend • Operations</div>
+            <h1 class="hero-title">
+              Hi, I'm <span class="hero-highlight">Ujwal&nbsp;Pathak</span><br />
+              blending data, code &amp; operations to build better systems.
+            </h1>
+            <p class="hero-subtitle">
+              Data science and backend development professional with hands-on experience in
+              operations, marketing, and technical infrastructure for education and technology
+              companies. Based in Bangalore, India.
+            </p>
+
+            <div class="hero-meta">
+              <span><span class="dot"></span> Open to opportunities</span>
+              <span>Data Science &amp; Backend Engineering</span>
+              <span>Bangalore, India</span>
+            </div>
+
+            <div class="hero-actions">
+              <!-- Update href to your hosted resume PDF -->
+              <a class="btn btn-primary" href="Ujwal_Pathak_Resume.pdf" target="_blank" rel="noopener">
+                View Resume
+              </a>
+              <a class="btn btn-outline" href="#contact">
+                Get in touch
+              </a>
+            </div>
+
+            <div class="hero-links">
+              <a href="mailto:ujwal.pathak03@gmail.com">Email</a>
+              <a href="https://www.linkedin.com/in/ujwalpathak01" target="_blank" rel="noopener">
+                LinkedIn
+              </a>
+              <a href="https://github.com/ujwal5" target="_blank" rel="noopener">
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-inner">
+              <div class="hero-photo-ring"></div>
+              <!-- Replace src with the path to your image -->
+              <img src="images/profile.jpg" alt="Profile photo" class="hero-photo" />
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Data • Backend • Ops
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span>About</span> Me</h2>
+          <p class="section-subtitle">
+            A blend of technical depth and operational experience across data science, backend
+            development, and educational technology operations.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <div class="about-highlight">Profile</div>
+            <div class="about-text">
+              <p>
+                I hold a Bachelor of Science in Computer Science &amp; Electronics from Government
+                Science College, Bangalore, and a Data Science Certification from ExcelR Institute.
+                My work spans technical support, backend development, operations, and digital
+                marketing in fast-paced education and technology environments.
+              </p>
+              <p>
+                I enjoy turning data into practical insights, building reliable backend systems, and
+                designing workflows that scale. Whether it’s managing infrastructure uptime,
+                implementing automation, or improving online engagement, I focus on measurable,
+                real-world impact.
+              </p>
+            </div>
+
+            <div class="about-facts">
+              <div class="pill">Based in Bangalore, India</div>
+              <div class="pill">Python • SQL • AWS • GCP</div>
+              <div class="pill">Large Language Models &amp; Responsible AI</div>
+              <div class="pill">EdTech &amp; Customer Experience</div>
+            </div>
+          </div>
+
+          <div class="about-panel">
+            <span>What I bring</span>
+            <h3>From infrastructure to insight</h3>
+            <ul>
+              <li>Hands-on operations experience managing uptime, feedback, and processes.</li>
+              <li>Backend development exposure with APIs, databases, and code quality practices.</li>
+              <li>Data-driven thinking for marketing analytics, customer insights, and KPIs.</li>
+              <li>Understanding of modern AI, including LLMs and Responsible AI principles.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span>Technical</span> Skills</h2>
+          <p class="section-subtitle">
+            A concise view of the technologies and domains I work with across data, backend, and
+            cloud.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card">
+            <h3>
+              Programming &amp; Data
+              <span class="card-pill">Core</span>
+            </h3>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Data Science</span>
+              <span class="tag">Machine Learning Algorithms</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>
+              AI &amp; Cloud
+              <span class="card-pill">Modern</span>
+            </h3>
+            <div class="tag-list">
+              <span class="tag">Large Language Models (LLMs)</span>
+              <span class="tag">Responsible AI</span>
+              <span class="tag">AWS (Solutions Architecture)</span>
+              <span class="tag">Google Cloud Platform (GCP)</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>
+              Systems &amp; Operations
+              <span class="card-pill">Ops</span>
+            </h3>
+            <div class="tag-list">
+              <span class="tag">Backend Development</span>
+              <span class="tag">Systems Administration</span>
+              <span class="tag">Operations Management</span>
+              <span class="tag">Workflow Automation</span>
+              <span class="tag">Git / GitHub</span>
+              <span class="tag">AI Video Creation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span>Professional</span> Experience</h2>
+          <p class="section-subtitle">
+            End-to-end exposure from technical support and backend engineering to operations,
+            marketing, and business development.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-list">
+            <!-- Bhanzu -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Operations Associate</div>
+                  <div class="timeline-company">Bhanzu &mdash; Bangalore, India</div>
+                </div>
+                <div class="timeline-meta">Aug 2025 &ndash; Present</div>
+              </div>
+              <div class="timeline-tags">
+                <span>Online Reputation</span>
+                <span>Process Improvement</span>
+                <span>Analytics</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>
+                    Manage online reputation across digital platforms by analyzing and responding to
+                    customer feedback, improving brand sentiment through data-driven insights.
+                  </li>
+                  <li>
+                    Collaborate with product, engineering, and customer success teams to resolve
+                    operational issues and implement process improvements.
+                  </li>
+                  <li>
+                    Develop automated workflows to streamline feedback monitoring and response
+                    protocols, reducing manual intervention.
+                  </li>
+                  <li>
+                    Track and report key performance metrics to stakeholders, providing actionable
+                    insights for strategic decision-making.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Gyan Edge -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Administrator &amp; Marketing Manager</div>
+                  <div class="timeline-company">Gyan Edge &mdash; Bangalore, India</div>
+                </div>
+                <div class="timeline-meta">Dec 2024 &ndash; Aug 2025</div>
+              </div>
+              <div class="timeline-tags">
+                <span>Digital Transformation</span>
+                <span>Marketing Automation</span>
+                <span>Business Development</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>
+                    Led end-to-end digital transformation initiatives including website development,
+                    social media strategy, and marketing automation, driving a 40% increase in
+                    online engagement.
+                  </li>
+                  <li>
+                    Managed business development operations and established strategic partnerships
+                    with educational institutions to expand market reach.
+                  </li>
+                  <li>
+                    Optimized front office operations and customer engagement workflows, improving
+                    operational efficiency and customer satisfaction.
+                  </li>
+                  <li>
+                    Implemented data analytics for customer insights and marketing campaign
+                    performance tracking.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Vmoksha -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Backend Developer Intern</div>
+                  <div class="timeline-company">Vmoksha Technologies Pvt. Ltd. &mdash; Bangalore, India</div>
+                </div>
+                <div class="timeline-meta">Apr 2024 &ndash; May 2024</div>
+              </div>
+              <div class="timeline-tags">
+                <span>Backend</span>
+                <span>APIs</span>
+                <span>Databases</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>
+                    Developed and maintained backend systems using modern development frameworks
+                    and best practices.
+                  </li>
+                  <li>
+                    Collaborated with the development team on database design, API development, and
+                    system optimization.
+                  </li>
+                  <li>
+                    Participated in code reviews and contributed to improving application
+                    performance and reliability.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- PSS Coaching -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Technical Support Specialist</div>
+                  <div class="timeline-company">PSS Coaching Center &mdash; Bangalore, India</div>
+                </div>
+                <div class="timeline-meta">Jun 2023 &ndash; Feb 2024</div>
+              </div>
+              <div class="timeline-tags">
+                <span>Systems Administration</span>
+                <span>EdTech</span>
+                <span>Uptime</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>
+                    Managed complete technical infrastructure for the educational platform, ensuring
+                    99% uptime and seamless delivery of digital learning content.
+                  </li>
+                  <li>
+                    Troubleshot and resolved technical issues across hardware, software, and network
+                    systems, minimizing disruption.
+                  </li>
+                  <li>
+                    Implemented system monitoring and maintenance protocols to proactively identify
+                    and address potential technical challenges.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside class="timeline-aside">
+            <h3>How my experience connects</h3>
+            <p>
+              Each role has added a layer to how I think about systems: from uptime and support, to
+              backend architecture, to operations, marketing, and reputation.
+            </p>
+            <ul>
+              <li>Strong ownership of day-to-day operations and customer experience.</li>
+              <li>Comfortable collaborating with cross-functional teams (product, engineering, and business).</li>
+              <li>Data-driven approach to process improvement and decision-making.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span>Education</span> Background</h2>
+          <p class="section-subtitle">
+            Formal education and structured programs that shaped my foundations in computing and
+            data science.
+          </p>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="edu-item">
+              <div class="edu-title">Bachelor of Science in Computer Science &amp; Electronics</div>
+              <div class="edu-meta">Government Science College, Bangalore</div>
+              <div class="edu-location">Bangalore, India &middot; Sep 2021 &ndash; Aug 2024</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-title">Data Science Certification Program</div>
+              <div class="edu-meta">ExcelR Institute</div>
+              <div class="edu-location">Bangalore, India &middot; May 2024 &ndash; Nov 2024</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Focus Areas</h3>
+            <p style="font-size:0.86rem; color:#d1d5db; margin-top:0.35rem;">
+              My academic and certification work has focused on:
+            </p>
+            <ul style="margin-top:0.75rem; padding-left:1.1rem; font-size:0.86rem; color:#d1d5db;">
+              <li>Core computer science and electronics fundamentals.</li>
+              <li>Python programming and applied machine learning.</li>
+              <li>Statistical thinking and data analysis workflows.</li>
+              <li>Cloud-native thinking with AWS and Google Cloud.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span>Certifi</span>cations</h2>
+          <p class="section-subtitle">
+            Structured learning paths and simulations that complement my practical experience.
+          </p>
+        </div>
+
+        <div class="card">
+          <ul class="cert-list">
+            <li>
+              Responsible AI: Applying AI Principles with Google Cloud &mdash; <span style="color:#9ca3af;">Google Cloud</span>
+            </li>
+            <li>
+              Introduction to Large Language Models &mdash; <span style="color:#9ca3af;">Google Cloud</span>
+            </li>
+            <li>Python for Machine Learning</li>
+            <li>AWS APAC Solutions Architecture Job Simulation</li>
+            <li>Data Science &amp; AWS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span>Contact</span> Me</h2>
+          <p class="section-subtitle">
+            Whether it&rsquo;s a data project, backend work, or an operations challenge, I&rsquo;d
+            be happy to connect.
+          </p>
+        </div>
+
+        <div class="card">
+          <div>
+            <ul class="contact-list">
+              <li>
+                <span>Email</span>
+                <a href="mailto:ujwal.pathak03@gmail.com">ujwal.pathak03@gmail.com</a>
+              </li>
+              <li>
+                <span>Location</span>
+                Bangalore, India
+              </li>
+              <li>
+                <span>Profiles</span>
+                <a href="https://www.linkedin.com/in/ujwalpathak01" target="_blank" rel="noopener">
+                  LinkedIn
+                </a>
+                &nbsp;&bull;&nbsp;
+                <a href="https://github.com/ujwal5" target="_blank" rel="noopener">
+                  GitHub
+                </a>
+              </li>
+            </ul>
+            <p class="contact-cta">
+              <strong>Preferred:</strong> Email or LinkedIn message with a short note about the role
+              or collaboration you have in mind.
+            </p>
+          </div>
+
+          <!-- Contact form handled by Formspree -->
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/xzznvyba"
+            method="POST"
+          >
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="_replyto"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="How can I help?"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Subject line for the email you receive -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New message from your portfolio website"
+            />
+
+            <button class="btn btn-primary" type="submit" style="justify-self:flex-start;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> Ujwal Pathak. All rights reserved.</span>
+      <span>Built with HTML &amp; CSS &mdash; Dark mode by design.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
